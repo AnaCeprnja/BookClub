@@ -7,3 +7,13 @@ nav ul li {
 h1 {
   color: chartreuse;
 }
+#signup{
+  color: black;
+
+}
+#login {
+  color:black
+}
+nav {
+  text-align: right;
+}
