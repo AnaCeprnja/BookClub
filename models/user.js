@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       validate: {
-       len: {
-        args: [1,99],
-        msg: 'Name must be between 1 and 99 characters'
-       }
+        len: {
+          args: [1, 99],
+          msg: 'Name must be between 1 and 99 characters'
+        }
       }
     },
     email: {
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         len: {
-          args: [8,99],
+          args: [8, 99],
           msg: 'Password must be between 8 and 99 characters'
         }
       }
@@ -54,17 +54,17 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   // checking the password on Sign-In and comparing to the hashed password in the DB
-  user.prototype.validPassword = function(typedPassword) {
+  user.prototype.validPassword = function (typedPassword) {
     let isCorrectPassword = bcrypt.compareSync(typedPassword, this.password); // check to see if password is correct.
-    
+
     return isCorrectPassword;
   }
 
   // return an object from the database of the user without the encrypted password
-  user.prototype.toJSON = function() {
+  user.prototype.toJSON = function () {
     let userData = this.get(); // 
     delete userData.password; // it doesn't delete password from database, only removes it. 
-    
+
     return userData;
   }
 
