@@ -5,15 +5,25 @@ nav ul li {
 }
 
 h1 {
-  color: chartreuse;
+  color: black;
 }
+
 #signup{
   color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
 
 }
 #login {
-  color:black
+  color:black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 20px;
 }
 nav {
   text-align: right;
+}
+#hp {
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 50px;
 }
