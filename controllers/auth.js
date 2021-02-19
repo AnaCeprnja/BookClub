@@ -29,36 +29,36 @@ router.post('/signup', (req, res) => {
     where: { email },
     defaults: { name, password }
   })
-  .then(([user, created]) => {
-    if (created) {
-      // if created, success and we will redirect back to / page
-      console.log(`${user.name} was created....`);
-      // flash messages
-      const successObject = {
-        successRedirect: '/',
-        successFlash: `Welcome ${user.name}. Account was created and logging in...`
+    .then(([user, created]) => {
+      if (created) {
+        // if created, success and we will redirect back to / page
+        console.log(`${user.name} was created....`);
+        // flash messages
+        const successObject = {
+          successRedirect: '/',
+          successFlash: `Welcome ${user.name}. Account was created and logging in...`
+        }
+        // passport authenicate
+        passport.authenticate('local', successObject)(req, res);
+      } else {
+        // Send back email already exists
+        req.flash('error', 'Email already exists');
+        res.redirect('/auth/signup');
       }
-      // passport authenicate
-      passport.authenticate('local', successObject)(req, res);
-    } else {
-      // Send back email already exists
-      req.flash('error', 'Email already exists');
+    })
+    .catch(error => {
+      console.log('**************Error');
+      console.log(error);
+      req.flash('error', 'Either email or password is incorrect. Please try again.');
       res.redirect('/auth/signup');
-    }
-  })
-  .catch(error => {
-    console.log('**************Error');
-    console.log(error);
-    req.flash('error', 'Either email or password is incorrect. Please try again.');
-    res.redirect('/auth/signup');
-  });
+    });
 });
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/auth/login',
   successFlash: 'Welcome back ...',
-  failureFlash: 'Either email or password is incorrect' 
+  failureFlash: 'Either email or password is incorrect'
 }));
 
 
