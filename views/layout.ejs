@@ -16,13 +16,16 @@
       <nav>
         <ul>
           <% if (!currentUser) {%>
+            <li><a id='signup' href="/">Homepage</a></li>
             <li><a id='signup' href="/auth/signup">Signup</a></li>
             <li><a id='login' href="/auth/login">Login</a></li>
             <li><a id='signup' href="/post/posts">Get In The Conversation</a></li>
             <% } else { %>
+              <li><a id='signup' href="/">Homepage</a></li>
               <li><a id='signup' href="/auth/logout">Logout</a></li>
               <li><a id='signup' href="/profile">Profile</a></li>
               <li><a id='signup' href="/post">Start the Conversation</a></li>
+              <li><a id='signup' href="/post/posts">Get In The Conversation</a></li>
          
 
               <% } %>
