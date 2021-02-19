@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   post.init({
     data: DataTypes.STRING,
-    commentId: DataTypes.INTEGER
+    id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true }
   }, {
     sequelize,
     modelName: 'post',

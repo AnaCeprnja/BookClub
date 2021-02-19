@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 
 // Controllers
 app.use('/auth', require('./controllers/auth'));
-//app.use('/comment', require('./controllers/comment'));
+app.use('/comment', require('./controllers/comment'));
 app.use('/post', require('./controllers/post'));
 
 app.get('/', (req, res) => {
