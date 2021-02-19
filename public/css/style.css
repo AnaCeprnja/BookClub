@@ -26,7 +26,7 @@ nav {
 #hp {
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 50px;
+  color: black;
 }
 .postBtn {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -36,4 +36,20 @@ nav {
 }
 .bb {
   background-image: url();
+}
+#hmpg {
+  background: rgb(71, 69, 69);
+}
+
+#img {
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+
+bb {
+  background: rgb(49, 48, 48);
 }
