@@ -1,29 +1,39 @@
 nav ul li {
   text-decoration: none;
   display: inline-block;
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 
 h1 {
   color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
 }
 
-#signup{
+#signup {
   color: black;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 20px;
-
 }
 #login {
-  color:black;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-font-size: 20px;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
 }
 nav {
   text-align: right;
 }
 #hp {
   text-align: center;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 50px;
+}
+.postBtn {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+  background-color: white;
+  text-align: center;
+}
+.bb {
+  background-image: url();
 }
