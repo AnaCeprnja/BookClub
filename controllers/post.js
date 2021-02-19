@@ -4,9 +4,14 @@ const db = require('../models')
 const router = express.Router()
 
 router.get('/', (req, res) => {
+    res.render('posts')
+})
+
+router.get('/posts', (req, res) => {
     db.post.findAll()
         .then(function (posts) {
-            res.render('posts', { posts: posts })
+            console.log(posts)
+            res.render('postsshow', { posts: posts })
         })
 })
 

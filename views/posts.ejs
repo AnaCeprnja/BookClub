@@ -1,18 +1,14 @@
 
 <h1>Create a new post</h1>
 
-<form action="/posts" method="POST">
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" name="title" required>
-  </div>
+<form action="/post" method="POST">
 
   <div class="form-group">
     </select>
   <div class="form-group">
     <label for="content">Content</label>
-    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
+    <textarea type="text" class="form-control" id="content" name="data" required></textarea>
   </div>
 
-  <input type="submit" class="btn btn-primary">
+  <button type="submit" class="postBtn">Post</button>
 </form>
