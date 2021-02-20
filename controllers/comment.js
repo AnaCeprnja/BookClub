@@ -29,4 +29,14 @@ router.post('/', (req, res) => {
         })
 })
 
+
+router.post('/delete', async (req, res) => {
+    let comment = await db.comment.findOne({ where: { id: req.body.commentId } }).catch(e => console.log(e.message))
+    if (!comment) console.log("comment not found", req.body.commentId)
+    else comment.destroy()
+    res.redirect('/post/posts')
+})
+
 module.exports = router;
+
+

@@ -42,4 +42,12 @@ router.post('/', (req, res) => {
         })
 })
 
+
+router.post('/delete', async (req, res) => {
+    let post = await db.post.findOne({ where: { id: req.body.postId } }).catch(e => console.log(e.message))
+    if (!post) console.log("post not found", req.body.postId)
+    else post.destroy()
+    res.redirect('/post/posts')
+})
+
 module.exports = router;

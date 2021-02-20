@@ -1,14 +1,26 @@
 <ul>
     <% posts.forEach(function(post) { %>
+      <li id="postStyle"><%= post.data %> 
+        <form action="/post/delete" method="POST">
+          <input type="hidden" name="postId" value= "<%= post.id %>" />
+          <input type="submit" value="x" />
+        </form>
+      </li>
       <form id="commentTxt" action="/comment" method="POST">
-       <li id="postStyle"><%= post.data %></li>
        <input type="hidden" name="postId" value= "<%= post.id %>" />
       <textarea type="text" class="form-control" id="showcomment" name="data" required></textarea>
-      <% post.comments.forEach(function(comment){ %>
-        <li id="text"><%= comment.data %></li>
-        <% }) %> 
       <button type="submit" class="commentBtn">Comment</button>
     </form>
+      <% post.comments.forEach(function(comment){ %>
+        <li id="text"><%= comment.data %>
+          <form action="/comment/delete" method="POST">
+            <input type="hidden" name="commentId" value= "<%= comment.id %>" />
+            <input type="submit" value="x" />
+          </form>
+
+        </li>
+        <% }) %> 
+     
     <% }) %>
   </ul>
   <body class="postLook"></body>
