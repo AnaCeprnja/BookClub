@@ -5,7 +5,10 @@ const session = require('express-session');
 const passport = require('./config/ppConfig'); //
 const flash = require('connect-flash');
 const multer = require('multer');
-const cloudinary = require('cloudinary')
+const cloudinary = require('cloudinary');
+const uploads = multer({ dest: './uploads' });
+
+
 
 
 
@@ -15,6 +18,7 @@ app.set('view engine', 'ejs');
 // Session 
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const isLoggedIn = require('./middleware/isLoggedIn');
+const { post } = require('./controllers/auth');
 
 // MIDDLEWARE
 app.use(require('morgan')('dev'));
@@ -59,6 +63,22 @@ app.get('/profile', isLoggedIn, (req, res) => {
   const { id, name, email } = req.user.get();
   res.render('profile', { id, name, email });
 });
+
+app.get('/profile/new', (req, res) => {
+  res.render('new');
+});
+
+app.post('/profile', uploads.single('inputFile'), (req, res) => {
+
+  const image = req.file.path;
+  console.log(image);
+
+  cloudinary.uploader.upload(image, (result) => {
+    console.log(result);
+    res.render('profile', { image: result.url })
+  })
+
+})
 
 
 

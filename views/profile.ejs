@@ -1,7 +1,16 @@
 <h2>Profile Page</h2>
+<form action="/profile" method="POST" enctype="multipart/form-data">
+    <label for="inputFile">Image</label>
+    <input type="file" name="inputFile">
+    <button type="submit" class="imgbtn">Upload Image</button>
+</form>
+
 
 <h3>Welcome to your PROFILE</h3>
 
 <p>Id: <%= id %></p>
 <p>Name: <%= name %></p>
 <p>Email: <%= email %></p>
+
+
+
