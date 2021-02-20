@@ -1,14 +1,14 @@
 <ul>
     <% posts.forEach(function(post) { %>
-      <form action="/comment" method="POST">
-       <li><%= post.data %></li>
+      <form id="commentTxt" action="/comment" method="POST">
+       <li id="postStyle"><%= post.data %></li>
        <input type="hidden" name="postId" value= "<%= post.id %>" />
       <textarea type="text" class="form-control" id="showcomment" name="data" required></textarea>
       <% post.comments.forEach(function(comment){ %>
-        <li><%= comment.data %></li>
+        <li ><%= comment.data %></li>
         <% }) %> 
       <button type="submit" class="commentBtn">Comment</button>
     </form>
     <% }) %>
   </ul>
-  <body id="bb"></body>
+  <body class="postLook"></body>
