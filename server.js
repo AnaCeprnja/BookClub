@@ -7,7 +7,8 @@ const flash = require('connect-flash');
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 const uploads = multer({ dest: './uploads' });
-
+let methodOverride = require('method-override');
+const db = require('./models')
 
 
 
@@ -25,6 +26,7 @@ app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
+app.use(methodOverride('_method'))
 
 // Session Middleware
 
@@ -60,23 +62,40 @@ app.get('/', (req, res) => {
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {
-  const { id, name, email } = req.user.get();
-  res.render('profile', { id, name, email });
+  const { id, name, email, image } = req.user.get();
+  res.render('profile', { id, name, email, image });
 });
 
 app.get('/profile/new', (req, res) => {
   res.render('new');
 });
 
-app.post('/profile', uploads.single('inputFile'), (req, res) => {
+app.put('/profile/:id', uploads.single('inputFile'), (req, res) => {
 
   const image = req.file.path;
-  console.log(image);
+  //console.log(image);
 
   cloudinary.uploader.upload(image, (result) => {
-    console.log(result);
-    res.render('profile', { image: result.url })
+    console.log('🌖🌹🌼🌙', result);
+
+  }).then(image => {
+    console.log('🌔🪐🌈💧', image)
+    db.user.update({
+      image: image.url
+    },
+      {
+        where: {
+          id: req.params.id
+        }
+      })
   })
+    .then(() => {
+      res.redirect('back')
+    }
+    )
+    .catch(error => {
+      console.log(error);
+    })
 
 })
 
