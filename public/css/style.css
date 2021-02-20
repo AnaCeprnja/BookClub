@@ -38,7 +38,7 @@ nav {
   background-image: url();
 }
 #hmpg {
-  background: rgb(71, 69, 69);
+  background: white;
 }
 
 #img {
@@ -68,7 +68,7 @@ bb {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: white;
   border: 2px solid black;
-  width: 400;
+  width: 400px;
 }
 
 #postStyle {
@@ -79,4 +79,9 @@ bb {
   margin: 20px;
   text-align: center;
   list-style-type: none;
+}
+#text {
+  list-style-type: none;
+  border: 1px solid black;
+  width: 300px;
 }

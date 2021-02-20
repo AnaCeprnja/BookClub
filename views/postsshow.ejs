@@ -5,7 +5,7 @@
        <input type="hidden" name="postId" value= "<%= post.id %>" />
       <textarea type="text" class="form-control" id="showcomment" name="data" required></textarea>
       <% post.comments.forEach(function(comment){ %>
-        <li ><%= comment.data %></li>
+        <li id="text"><%= comment.data %></li>
         <% }) %> 
       <button type="submit" class="commentBtn">Comment</button>
     </form>
