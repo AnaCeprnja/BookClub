@@ -46,7 +46,7 @@ nav {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 75%;
   height: auto;
 }
 
@@ -84,4 +84,28 @@ bb {
   list-style-type: none;
   border: 1px solid black;
   width: 300px;
+}
+#auth {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  float: left;
+  font-size: 30px;
+  border-bottom: 6px solid;
+  margin-bottom: 50px;
+  padding: 13px 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+#logbtn {
+  background-color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 25px;
+}
+#lb {
+  background: url(https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80)
+    no-repeat;
+  background-size: cover;
+  opacity: 0.7;
 }
