@@ -61,7 +61,10 @@ bb {
   border: 2px solid black;
 }
 .postLook {
-  background-color: white;
+  background: url(https://images.unsplash.com/photo-1557672211-0741026eacfb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
+    no-repeat;
+  background-size: cover;
+  opacity: 0.7;
 }
 
 #showcomment {
@@ -105,6 +108,18 @@ bb {
 }
 #lb {
   background: url(https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80)
+    no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+#pbody {
+  background: url(https://images.unsplash.com/photo-1559762705-2123aa9b467f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80)
+    no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+#stc {
+  background: url(https://images.unsplash.com/photo-1557672211-0741026eacfb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
     no-repeat;
   background-size: cover;
   opacity: 0.7;
