@@ -1,4 +1,6 @@
-<h2>Profile Page</h2>
+<h1>Profile Page</h1>
+<h5>Welcome to BookClub,
+ a social media platform dedicated to conversations about books.</h5>
 <form action="/profile/<%= id %>/?_method=PUT" method="POST" enctype="multipart/form-data">
     <label for="inputFile">Image</label>
     <input type="file" name="inputFile">
@@ -6,11 +8,11 @@
 </form>
 
 
-<h3>Welcome to your PROFILE</h3>
+
 
 <p>Id: <%= id %></p>
 <p>Name: <%= name %></p>
 <p>Email: <%= email %></p>
-<img src="<%= image %>" alt="Profile Picture">
+<img id="imgSz" src="<%= image %>" alt="Profile Picture">
 <body id="pbody"></body>
 
